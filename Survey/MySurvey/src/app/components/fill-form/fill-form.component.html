@@ -1,0 +1,187 @@
+<div class="container">
+
+  <!-- Loader container -->
+  <div *ngIf="isLoading" class="loader-container">
+    <!-- Loader -->
+    <div class="loader"></div>
+  </div>
+  <div class="mt-4" *ngIf="!isError" [ngClass]="{'alert': true, 'alert-danger': isError, 'alert-success': !isError}"
+       role="alert">
+    {{ error }}
+  </div>
+  <div class="row align-items-start mt-4">
+    <div class="col-6 justify-content-start">
+      Personal Details:
+    </div>
+    <div class="col-4">
+      <div class="mb-3 justify-content-start">
+        <label>Full Names</label><br>
+        <input [(ngModel)]="fullNames" type="text" class="form-control" id="exampleFormControlInput1"
+               [ngClass]="{'blue-border': true}">
+      </div>
+      <div class="mb-3 w-3 justify-content-start">
+        <label>Email</label><br>
+        <input [(ngModel)]="email" type="email" class="form-control" id="exampleFormControlInput2"
+               [ngClass]="{'blue-border': true}">
+      </div>
+      <div class="mb-3">
+        <label>Date of Birth</label><br>
+        <input [(ngModel)]="dateOfBirth" type="date" class="form-control" id="exampleFormControlInput3"
+               [ngClass]="{'blue-border': true}" [max]="maxDate">
+      </div>
+      <div class="mb-3 justify-content-start">
+        <label>Contact Number</label><br>
+        <input [(ngModel)]="contact" type="number" class="form-control" id="exampleFormControlInput4"
+               [ngClass]="{'blue-border': true}">
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row align-items-start mt-4">
+    <div class="col-6 d-flex justify-content-start">
+      What is your favourite food?
+    </div>
+    <div class="col-6 row d-flex justify-content-start">
+      <div class="form-check ml-4 col-3 justify-content-start">
+        <input class="form-check-input border-blue" type="radio" name="food" id="defaultRadio1"
+               [(ngModel)]="selectedFood" value="PIZZA">
+        <label class="form-check-label text-start" for="defaultRadio1">
+          Pizza
+        </label>
+      </div>
+      <div class="form-check ml-4 col-3 justify-content-start">
+        <input class="form-check-input border-blue" type="radio" name="food" id="defaultRadio2"
+               [(ngModel)]="selectedFood" value="PASTA">
+        <label class="form-check-label text-start" for="defaultRadio2">
+          Pasta
+        </label>
+      </div>
+      <div class="form-check ml-4 col-3 justify-content-start">
+        <input class="form-check-input border-blue" type="radio" name="food" id="defaultRadio3"
+               [(ngModel)]="selectedFood" value="PAP_AND_WORS">
+        <label class="form-check-label text-start" for="defaultRadio3">
+          Pap and Wors
+        </label>
+      </div>
+      <div class="form-check ml-4 col-3">
+        <input class="form-check-input border-blue" type="radio" name="food" id="defaultRadio4"
+               [(ngModel)]="selectedFood" value="OTHERS">
+        <label class="form-check-label text-start" for="defaultRadio4">
+          Other
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-4 ">
+    <p class="col-12 d-flex justify-content-start ">
+      Please rate your level of agreement on a scale from 1 to 5, with 1 being "strongly agree" and 5 being "strongly
+      disagree".
+    </p>
+    <table class="table table-bordered">
+      <thead>
+      <tr>
+        <th class="text-center" scope="col"></th>
+        <th class="text-center" scope="col">Strongly Agree</th>
+        <th class="text-center" scope="col">Agree</th>
+        <th class="text-center" scope="col">Neutral</th>
+        <th class="text-center" scope="col">Disagree</th>
+        <th class="text-center" scope="col">Strongly Disagree</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <th scope="row">I like to watch movies</th>
+        <td class="text-center">
+          <input class="form-check-input" type="radio" name="movie" id="movie5" [(ngModel)]="movieRate"
+                 value="STRONGLY_AGREE">
+        </td>
+        <td class="text-center">
+          <input class="form-check-input" type="radio" name="movie" id="movie4" [(ngModel)]="movieRate" value="AGREE">
+        </td>
+        <td class="text-center">
+          <input class="form-check-input" type="radio" name="movie" id="movie3" [(ngModel)]="movieRate" value="NEUTRAL">
+        </td>
+        <td class="text-center">
+          <input class="form-check-input" type="radio" name="movie" id="movie2" [(ngModel)]="movieRate"
+                 value="DISAGREE">
+        </td>
+        <td class="text-center">
+          <input class="form-check-input" type="radio" name="movie" id="movie1" [(ngModel)]="movieRate"
+                 value="STRONGLY_DISAGREE">
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">I like to listening to radio</th>
+        <td class="text-center">
+          <input class="form-check-input" type="radio" name="radio" id="radio5" [(ngModel)]="radioRate"
+                 value="STRONGLY_AGREE">
+        </td>
+        <td class="text-center">
+          <input class="form-check-input" type="radio" name="radio" id="radio4" [(ngModel)]="radioRate" value="AGREE">
+        </td>
+        <td class="text-center">
+          <input class="form-check-input" type="radio" name="radio" id="radio3" [(ngModel)]="radioRate" value="NEUTRAL">
+        </td>
+        <td class="text-center">
+          <input class="form-check-input" type="radio" name="radio" id="radio2" [(ngModel)]="radioRate"
+                 value="DISAGREE">
+        </td>
+        <td class="text-center">
+          <input class="form-check-input" type="radio" name="radio" id="radio1" [(ngModel)]="radioRate"
+                 value="STRONGLY_DISAGREE">
+        </td>
+      </tr>
+
+      <tr>
+        <th scope="row">I like to eat out</th>
+        <td class="text-center">
+          <input class="form-check-input" type="radio" name="eatout" id="eatout5" [(ngModel)]="eatOutRate"
+                 value="STRONGLY_AGREE">
+        </td>
+        <td class="text-center">
+          <input class="form-check-input" type="radio" name="eatout" id="eatout4" [(ngModel)]="eatOutRate"
+                 value="AGREE">
+        </td>
+        <td class="text-center">
+          <input class="form-check-input" type="radio" name="eatout" id="eatout3" [(ngModel)]="eatOutRate"
+                 value="NEUTRAL">
+        </td>
+        <td class="text-center">
+          <input class="form-check-input" type="radio" name="eatout" id="eatout2" [(ngModel)]="eatOutRate"
+                 value="DISAGREE">
+        </td>
+        <td class="text-center">
+          <input class="form-check-input" type="radio" name="eatout" id="eatout1" [(ngModel)]="eatOutRate"
+                 value="STRONGLY_DISAGREE">
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">I like to watch tv</th>
+        <td class="text-center">
+          <input class="form-check-input" type="radio" name="tv" id="tv5" [(ngModel)]="tvRate" value="STRONGLY_AGREE">
+        </td>
+        <td class="text-center">
+          <input class="form-check-input" type="radio" name="tv" id="tv4" [(ngModel)]="tvRate" value="AGREE">
+        </td>
+        <td class="text-center">
+          <input class="form-check-input" type="radio" name="tv" id="tv3" [(ngModel)]="tvRate" value="NEUTRAL">
+        </td>
+        <td class="text-center">
+          <input class="form-check-input" type="radio" name="tv" id="tv2" [(ngModel)]="tvRate" value="DISAGREE">
+        </td>
+        <td class="text-center">
+          <input class="form-check-input" type="radio" name="tv" id="tv1" [(ngModel)]="tvRate"
+                 value="STRONGLY_DISAGREE">
+        </td>
+      </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+  <div class="text-center mt-2">
+    <button (click)="onSubmit()" type="button" class="btn btn-primary pl-4 pr-4 mb-15">Submit</button>
+  </div>
+</div>

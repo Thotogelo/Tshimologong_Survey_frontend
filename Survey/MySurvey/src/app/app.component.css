@@ -1,0 +1,14 @@
+.nav-item.active {
+  background-color: blue; /* Change this to the color you want for the highlight */
+  font-weight: bold; /* Add boldness */
+  color: white; /* Text color */
+}
+
+
+.bold-navbar-brand {
+  font-weight: bold;
+}
+
+.blue-border {
+  border: 2px solid blue;
+}

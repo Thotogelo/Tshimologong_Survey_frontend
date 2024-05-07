@@ -1,0 +1,112 @@
+<div class="container justify-content-center">
+  <div class="mt-4 text-center" *ngIf="isError" [ngClass]="{'alert': true, 'alert-danger': isError, 'alert-success': !isError}" role="alert">
+    {{ error }}
+  </div>
+
+  <div class="row col-12 text-center">
+    <div>
+      <h4>Survey Results</h4>
+    </div>
+  </div>
+
+  <div class="justify-content-center">
+    <div class="row mt-3">
+      <div class="col-7 justify-content-start">
+        <h6>Total number of survey:</h6>
+      </div>
+      <div class="col-2 text-right">
+        <h6>{{ total }}</h6>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-7 justify-content-start">
+        <h6>Average Age:</h6>
+      </div>
+      <div class="col-2 text-right">
+        <h6>{{ avarage }}</h6>
+      </div>
+    </div>
+
+    <div class="row align-items-start">
+      <div class="col-7 justify-content-start">
+        <h6>Oldest person participated in survey:</h6>
+      </div>
+      <div class="col-2 text-right">
+        <h6>{{ older }}</h6>
+      </div>
+    </div>
+
+    <div class="row align-items-start">
+      <div class="col-7 justify-content-start">
+        <h6>Youngest person participated in survey:</h6>
+      </div>
+      <div class="col-2 text-right">
+        <h6>{{ younger }}</h6>
+      </div>
+    </div>
+
+    <!-- Food stats -->
+
+    <div class="row align-items-start mt-4">
+      <div class="col-7 justify-content-start">
+        <h6>Percentage of people who like Pizza:</h6>
+      </div>
+      <div class="col-2 text-right">
+        <h6>{{ pizza }}</h6>
+      </div>
+    </div>
+    <div class="row align-items-start">
+      <div class="col-7 justify-content-start">
+        <h6>Percentage of people who like Pasta:</h6>
+      </div>
+      <div class="col-2 text-right">
+        <h6>{{ pasta }}</h6>
+      </div>
+    </div>
+
+    <div class="row align-items-start ">
+      <div class="col-7 justify-content-start">
+        <h6>Percentage of people who like Pap and Wors:</h6>
+      </div>
+      <div class="col-2 text-right">
+        <h6>{{ papAndWors }}</h6>
+      </div>
+    </div>
+
+    <!-- Hobbies -->
+
+    <div class="row mt-4 align-items-start">
+      <div class="col-7 justify-content-start">
+        <h6>Percentage of people who like to watch movies:</h6>
+      </div>
+      <div class="col-2 text-right">
+        <h6>{{ movieRate }}</h6>
+      </div>
+    </div>
+    <div class="row align-items-start">
+      <div class="col-7 justify-content-start text-left">
+        <h6>Percentage of people who like to radio:</h6>
+      </div>
+      <div class="col-2 text-right">
+        <h6>{{ radioRate }}</h6>
+      </div>
+    </div>
+    <div class="row align-items-start">
+      <div class="col-7 justify-content-start text-left">
+        <h6>Percentage of people who like to eat out:</h6>
+      </div>
+      <div class="col-2 text-right">
+        <h6>{{ eatOutRate }} </h6>
+      </div>
+    </div>
+    <div class="row align-items-start">
+      <div class="col-7 justify-content-start text-left">
+        <h6 class="text-left">Percentage of people who like to watch TV:</h6>
+      </div>
+      <div class="col-2 text-right">
+        <h6 class="text-left">{{ tvRate }}</h6>
+      </div>
+    </div>
+  </div>
+</div>
